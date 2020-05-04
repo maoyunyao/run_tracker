@@ -34,15 +34,11 @@ def run(tracker_name, dataset_name, output_dir):
         dataset == GOT10KDataset(config.got10k_val_path, split='val')
     else:
         raise ValueError("Unrecognized dataset name")
-    
-    result = tracker.track_dataset(dataset)
-    
+
     if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+        os.makedirs(output_dir) 
     
-    for name in result:
-        result_path = '{}/{}.txt'.format(output_dir, name)
-        np.savetxt(result_path, result[name], delimiter='\t', fmt='%d')
+    tracker.track_dataset(dataset, output_dir)
 
 
 

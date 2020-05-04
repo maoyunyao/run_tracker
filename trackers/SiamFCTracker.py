@@ -6,10 +6,10 @@
 tracker_path = '/data5/maoyy/Trackers'
 import sys
 sys.path.append(tracker_path)
-from SiamFC_crop import SiamFCCropTracker as TrackerClass
+from SiamFC import SiamFCTracker as TrackerClass
 
 # Param(s) your tracker needed:
-model_path = '/data5/maoyy/Trackers/SiamFC_crop/models/siamfc_crop_30.pth'
+model_path = '/data5/maoyy/Trackers/SiamFC/models/siamfc_30.pth'
 gpu_id = 0
 params = [model_path, gpu_id]
 

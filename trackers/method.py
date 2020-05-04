@@ -1,15 +1,20 @@
 import cv2
+import numpy as np
 from tqdm import tqdm
 
-def track_dataset(self, dataset):
-    result = {}
+def track_dataset(self, dataset, output_dir):
 
     for seq in tqdm( dataset.sequence_list ):
         seq_result = self.track_sequence(seq)
-        result[seq.name] = seq_result
-    return result
+        result_path = '{}/{}.txt'.format(output_dir, seq.name)
+        np.savetxt(result_path, seq_result, delimiter='\t', fmt='%d')
+    print("Done!")
+
 
 def track_sequence(self, seq):
+    '''
+    init_bbox, bbox: [xmin, ymin, width, height], one-based
+    '''
     seq_result = []
     
     init_info = seq.init_info()

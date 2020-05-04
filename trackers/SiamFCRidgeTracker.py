@@ -9,7 +9,7 @@ sys.path.append(tracker_path)
 from siamfc import SiamFCRidgeTracker as TrackerClass
 
 # Param(s) your tracker needed:
-model_path = '/data5/maoyy/SiamFC_ridge_train/models/siamfc_ridge_80.pth'
+model_path = '/data5/maoyy/SiamFC_ridge_train/models/siamfc_ridge_rlv1_lambda0.02/30.pth'
 params = [model_path]
 
 
